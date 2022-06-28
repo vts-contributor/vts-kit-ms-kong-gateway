@@ -1,0 +1,22 @@
+_format_version: "1.1"
+services:
+- name: svc1
+  host: 10.61.185.19
+  port: 8080
+  routes:
+  - name: r1
+    https_redirect_status_code: 301
+    strip_path: true
+    paths:
+    - /r1
+  - name: test1
+    https_redirect_status_code: 301
+    strip_path: true	
+    paths:
+    - /test1 
+  - name: test-header 
+    https_redirect_status_code: 301
+    strip_path: true
+    headers: 
+      forward-this-request: ["this data"]
+    
